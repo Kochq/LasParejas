@@ -4,6 +4,7 @@ import {
   alturaKeyframe,
   presionKeyFrame,
 } from '../animations/animations';
+import { getData } from '../api/fetchData';
 import './Tanque.css';
 
 const Tanque = () => {
@@ -12,24 +13,20 @@ const Tanque = () => {
   const canillaRef = useRef(null);
   const alturaRef = useRef(null);
   const aguaRef = useRef(null);
-  const contadorRef2 = useRef(0);
-  const contadorRef = useRef(0);
+  let posAntCanilla;
+  let posAnt = 100;
   let presion = 0;
   let altura = 0;
   let valor = 0;
-  let posAnt = 100;
-  let posAntCanilla;
+  let datos = [];
 
   const animarAgua = (finPos, elemento) => {
-    contadorRef.current++;
-    if (contadorRef.current >= 2) {
-      const aguaAnimation = new Animation(
-        aguaKeyframe(posAnt, finPos, elemento),
-        document.timeline
-      );
-      posAnt = finPos;
-      aguaAnimation.play();
-    }
+    const aguaAnimation = new Animation(
+      aguaKeyframe(posAnt, finPos, elemento),
+      document.timeline
+    );
+    posAnt = finPos;
+    aguaAnimation.play();
   };
 
   const animarAltura = (finPos, elemento) => {
@@ -41,47 +38,45 @@ const Tanque = () => {
   };
 
   const animarCanilla = (finPos, elemento) => {
-    contadorRef2.current++;
-    if (contadorRef2.current >= 2) {
-      const canillaAnimation = new Animation(
-        presionKeyFrame(finPos, posAntCanilla, elemento),
-        document.timeline
-      );
-      posAntCanilla = finPos;
-      canillaAnimation.play();
-    }
+    const canillaAnimation = new Animation(
+      presionKeyFrame(finPos, posAntCanilla, elemento),
+      document.timeline
+    );
+    posAntCanilla = finPos;
+    canillaAnimation.play();
   };
 
   const mapear = (x, in_min, in_max, out_min, out_max) => {
     return ((x - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
 
-  const getData = () => {
-    fetch('https://relevar.com.ar/app/LasParejas/backend.php')
-      .then((res) => res.json())
-      .then((json) => {
-        altura = json.altAgua;
-        presion = json.presion;
-        setPresionText(presion);
-        setAlturaText(altura);
+  const animar = (ref) => {
+    console.log(ref);
+    altura = ref.altAgua;
+    presion = ref.presion;
+    setPresionText(presion);
+    setAlturaText(altura);
 
-        valor = mapear(altura, 0, 3, 100, 0);
+    valor = mapear(altura, 0, 3, 100, 0);
 
-        if (presion >= 0.2) animarCanilla(0, canillaRef);
-        else animarCanilla(-100, canillaRef);
+    if (presion >= 0.2) animarCanilla(0, canillaRef);
+    else animarCanilla(-100, canillaRef);
 
-        if (valor < 4) animarAltura(4, alturaRef);
-        else if (valor > 80) animarAltura(80, alturaRef);
-        else animarAltura(valor, alturaRef);
-        animarAgua(valor, aguaRef);
-      });
+    if (valor < 4) animarAltura(4, alturaRef);
+    else if (valor > 80) animarAltura(80, alturaRef);
+    else animarAltura(valor, alturaRef);
+    animarAgua(valor, aguaRef);
+  };
+
+  const actualizarDatos = async () => {
+    const datosJson = await getData();
+    datos = datosJson;
+    animar(datos);
   };
 
   useEffect(() => {
-    getData();
-    const intervalId = setInterval(() => {
-      getData();
-    }, 5000);
+    actualizarDatos();
+    const intervalId = setInterval(actualizarDatos, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -89,13 +84,9 @@ const Tanque = () => {
   }, []);
 
   return (
-    <div className='contenedor'>
+    <div>
       <div className='presion'>
-        <img
-          className='presion--img'
-          src='/src/assets/canilla.png'
-          height='40px'
-        />
+        <img className='presion--img' src='/img/canilla.png' height='40px' />
         <p className='presion--text'>Presion:</p>
         <p
           style={presionText > 0.2 ? { color: '#009ae6' } : { color: 'red' }}

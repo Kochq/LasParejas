@@ -1,11 +1,15 @@
-import Tanque from './components/Tanque';
+import Equipo from './components/Equipo';
+import NavBar from './components/NavBar';
 
 const App = () => {
   return (
-  <>
-    <Tanque />
-  </>
-  )
+    <>
+      <NavBar />
+      <div className='equipos'>
+        <Equipo name='Equipo 1' />
+      </div>
+    </>
+  );
 };
 
 export default App;
