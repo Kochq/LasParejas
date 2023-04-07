@@ -1,0 +1,110 @@
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #efefef;
+}
+
+.contenedor {
+  display: inline-block;
+  transition: all 0.5s ease;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 155px;
+  margin: 10px;
+  padding: 7px 15px 15px 15px;
+}
+/*test*/
+
+.contenedor:hover {
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.altura {
+  padding-right: 25px;
+  padding-left: 25px;
+  position: absolute;
+  font-weight: 800;
+  color: #000;
+  height: 250px;
+  z-index: 2;
+}
+
+#banner {
+  border-radius: 10px;
+  backface-visibility: hidden;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-color: #000;
+  border-style: solid;
+  position: relative;
+  background: #fff;
+  border-width: 2px;
+  border-top: none;
+  overflow: hidden;
+  margin-top: -7px;
+  height: 220px;
+  width: 150px;
+}
+
+#altura {
+  padding-right: 25px;
+  padding-left: 25px;
+  position: absolute;
+  font-weight: 800;
+  color: #000;
+  height: 250px;
+  z-index: 2;
+}
+
+#banner .fill {
+  transform: translateY(220px);
+}
+
+#banner .pour {
+  background: #009ae6;
+  position: absolute;
+  margin-left: -3px;
+  left: 27.8%;
+  width: 6px;
+  bottom: 0;
+  top: 0;
+}
+
+#banner #waveShape {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: waveAction;
+  animation-duration: 1s;
+  fill: #04acff;
+  height: 150px;
+  width: 300px;
+}
+
+.presion {
+  justify-content: space-between;
+  align-items: center;
+  width: 155.714px;
+  display: flex;
+}
+
+.presion--img {
+  margin-right: 5px;
+}
+
+@keyframes waveAction {
+  0% {
+    transform: translate(-150px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/*
+@keyframes pourAction {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}*/
