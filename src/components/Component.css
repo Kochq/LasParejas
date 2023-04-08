@@ -3,19 +3,3 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
-.text {
-    display: flex;
-    margin-top: 15.5px;
-}
-
-.label {
-    font-weight: 800;
-    margin: 0;
-    margin-right: 5px;
-}
-
-.data {
-  margin: 0;
-}
-  

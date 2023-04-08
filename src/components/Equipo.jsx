@@ -1,6 +1,7 @@
 import Tanque from './Tanque';
 import Component from './Component';
-import './Equipo.css'
+import Buttons from './Buttons';
+import './Equipo.css';
 
 const Equipo = (props) => {
   return (
@@ -10,6 +11,7 @@ const Equipo = (props) => {
         <Tanque />
         <Component />
       </div>
+      <Buttons />
     </div>
   );
 };

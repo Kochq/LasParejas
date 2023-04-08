@@ -11,3 +11,11 @@ export const getData = async () => {
     throw error;
   }
 };
+
+export const getDatos = () => {
+  fetch('https://relevar.com.ar/app/LasParejas/backend.php')
+    .then((res) => res.json())
+    .then((json) => {
+      return json;
+    });
+};

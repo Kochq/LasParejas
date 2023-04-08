@@ -4,7 +4,6 @@ import {
   alturaKeyframe,
   presionKeyFrame,
 } from '../animations/animations';
-import { getData } from '../api/fetchData';
 import './Tanque.css';
 
 const Tanque = () => {
@@ -68,10 +67,12 @@ const Tanque = () => {
     animarAgua(valor, aguaRef);
   };
 
-  const actualizarDatos = async () => {
-    const datosJson = await getData();
-    datos = datosJson;
-    animar(datos);
+  const actualizarDatos = () => {
+    fetch('https://relevar.com.ar/app/LasParejas/backend.php')
+      .then((res) => res.json())
+      .then((datos) => {
+        animar(datos);
+      });
   };
 
   useEffect(() => {

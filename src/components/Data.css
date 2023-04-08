@@ -1,0 +1,20 @@
+.text {
+  display: flex;
+  align-items: center;
+  margin-top: 15.5px;
+}
+
+.label {
+  font-weight: 800;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.data {
+  margin: 0;
+}
+
+.svg {
+  height: 20px;
+  margin-right: 3px;
+}
