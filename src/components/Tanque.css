@@ -1,6 +1,5 @@
 .altura {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding: 0 16%;
   position: absolute;
   font-weight: 800;
   color: #000;
