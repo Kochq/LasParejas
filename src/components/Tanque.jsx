@@ -17,7 +17,6 @@ const Tanque = () => {
   let presion = 0;
   let altura = 0;
   let valor = 0;
-  let datos = [];
 
   const animarAgua = (finPos, elemento) => {
     const aguaAnimation = new Animation(
@@ -77,7 +76,7 @@ const Tanque = () => {
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 3000);
+    const intervalId = setInterval(actualizarDatos, 10000);
 
     return () => {
       clearInterval(intervalId);
