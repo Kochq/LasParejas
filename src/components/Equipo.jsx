@@ -3,10 +3,10 @@ import Component from './Component';
 import Buttons from './Buttons';
 import './Equipo.css';
 
-const Equipo = (props) => {
+const Equipo = ({name}) => {
   return (
     <div className='card'>
-      <h2 className='cardTitle'>{props.name}</h2>
+      <h2 className='cardTitle'>{name}</h2>
       <div className='contenedorsito'>
         <Tanque />
         <Component />
