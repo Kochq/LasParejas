@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  width: 310px;
   flex-direction: column;
   transition: all 0.5s ease;
   background-color: #fff;
@@ -13,12 +12,10 @@
 
 .cardTitle {
   margin: auto;
-  display: block;
 }
 
 .contenedorsito {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 10px;
 }

@@ -32,7 +32,7 @@ const Component = () => {
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 10000);
+    const intervalId = setInterval(actualizarDatos, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -43,8 +43,8 @@ const Component = () => {
     <div className='datos'>
       <Data label='Dia' dato={data.dia} svg={svgs.calendarSvg} />
       <Data label='Hora' dato={data.hora} svg={svgs.relojSvg} />
-      <Data label='Energia' dato={data.bateria} svg={svgs.lamparaSvg} />
-      <Data label='Bateria' dato={data.energia} svg={svgs.bateriaSvg} />
+      <Data label='Bateria' dato={`${data.bateria}v`} svg={svgs.bateriaSvg}/>
+      <Data label='Energia' dato={data.energia} svg={svgs.lamparaSvg} />
     </div>
   );
 };

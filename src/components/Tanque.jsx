@@ -76,7 +76,7 @@ const Tanque = () => {
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 10000);
+    const intervalId = setInterval(actualizarDatos, 3000);
 
     return () => {
       clearInterval(intervalId);
@@ -89,7 +89,7 @@ const Tanque = () => {
         <img className='presion--img' src='/img/canilla.png' height='40px' />
         <p className='presion--text'>Presion:</p>
         <p
-          style={presionText > 0.2 ? { color: '#009ae6' } : { color: 'red' }}
+          style={presionText > 0.2 ? { color: '#007DBB' } : { color: 'red' }}
           id='presion--text'
         >
           {presionText}

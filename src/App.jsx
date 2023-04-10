@@ -5,9 +5,9 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <div className='equipos'>
+      <main className='equipos'>
         <Equipo name='Equipo 1' />
-      </div>
+      </main>
     </>
   );
 };

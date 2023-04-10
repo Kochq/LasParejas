@@ -1,6 +1,6 @@
-import './Data.css'
+import './Data.css';
 
-const Data = ({ label, dato, svg }) => {
+const Data = ({ label, dato, svg, ifd }) => {
   return (
     <div className='text'>
       <svg

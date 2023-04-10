@@ -26,3 +26,9 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
 }
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
