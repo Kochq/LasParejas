@@ -1,9 +1,9 @@
 import Tanque from './Tanque';
 import Component from './Component';
-import Buttons from './Buttons';
+import Botones from './Botones';
 import './Equipo.css';
 
-const Equipo = ({name}) => {
+const Equipo = ({ name }) => {
   return (
     <div className='card'>
       <h2 className='cardTitle'>{name}</h2>
@@ -11,7 +11,7 @@ const Equipo = ({name}) => {
         <Tanque />
         <Component />
       </div>
-      <Buttons />
+      <Botones />
     </div>
   );
 };

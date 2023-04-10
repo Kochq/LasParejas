@@ -43,7 +43,7 @@ const Component = () => {
     <div className='datos'>
       <Data label='Dia' dato={data.dia} svg={svgs.calendarSvg} />
       <Data label='Hora' dato={data.hora} svg={svgs.relojSvg} />
-      <Data label='Bateria' dato={`${data.bateria}v`} svg={svgs.bateriaSvg}/>
+      <Data label='Bateria' dato={`${data.bateria}v`} svg={svgs.bateriaSvg} />
       <Data label='Energia' dato={data.energia} svg={svgs.lamparaSvg} />
     </div>
   );

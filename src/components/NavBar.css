@@ -1,17 +1,37 @@
 .nav {
-    display: flex;
-    background-color: #fff;
-    padding-left: 10px;
-    align-items: center;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    max-height: fit-content;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  max-height: fit-content;
+  padding: 0 10px;
+}
+
+.nav--title {
+  display: flex;
 }
 
 .title {
-    margin: 12px;
+  margin: 12px;
 }
 
 .logo {
-    height: 50px;
-    margin-right: 15px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.quit {
+  display: flex;
+  padding: 10px 15px;
+  background-color: #dc1025;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.quit:hover {
+  background-color: #af0e1e;
 }

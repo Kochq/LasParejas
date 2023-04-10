@@ -42,4 +42,3 @@ export const presionKeyFrame = (initPos, posAnt = -100, elemento) => {
   );
   return presionKeyFrame;
 };
-
