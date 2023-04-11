@@ -1,15 +1,16 @@
 .nav {
-  display: flex;
-  background-color: #fff;
-  justify-content: space-between;
-  align-items: center;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  background-color: #fff;
   max-height: fit-content;
+  align-items: center;
   padding: 0 10px;
+  display: flex;
 }
 
 .nav--title {
   display: flex;
+  align-items: center;
 }
 
 .title {
@@ -18,18 +19,19 @@
 
 .logo {
   height: 50px;
-  margin-right: 15px;
 }
 
 .quit {
-  display: flex;
-  padding: 10px 15px;
   background-color: #dc1025;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
   transition: all 0.5s ease;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  align-content: center;
+  cursor: pointer;
+  flex-wrap: wrap;
+  display: flex;
+  color: #fff;
 }
 
 .quit:hover {

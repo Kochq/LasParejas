@@ -10,11 +10,11 @@ const NavBar = () => {
           src='https://relevar.com.ar/app/imagenes-iconos/LOGO_RELEVAR.png'
           alt='logo'
         />
-        <h1 className='title'>Cooperativa de agua potable de Las Parejas</h1>
+        <h1 className='title'>Las Parejas</h1>
       </div>
       <div className='nav--quit'>
         <a className='quit' href='https://relevar.com.ar/app/cerrar-sesion'>
-          Cerrar sesión
+          Salir
         </a>
       </div>
     </nav>
