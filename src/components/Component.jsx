@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Data from './Data';
+import { fetchData } from '../api/api';
 import './Component.css';
-let newData;
 
 const svgs = {
   calendarSvg:
@@ -15,24 +15,11 @@ const svgs = {
 
 const Component = () => {
   const [data, setData] = useState([]);
-
-  const actualizarDatos = () => {
-    fetch('https://relevar.com.ar/app/LasParejas/backend.php')
-      .then((res) => res.json())
-      .then((datos) => {
-        newData = {
-          ...datos,
-          bateria: datos.bateria.toFixed(1),
-          energia: datos.bateria >= 12 ? 'OK' : 'Baja',
-        };
-
-        setData(newData);
-      });
-  };
+  const actualizarDatos = () => fetchData().then(setData);
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 90000);
+    const intervalId = setInterval(actualizarDatos, 1000);
 
     return () => {
       clearInterval(intervalId);

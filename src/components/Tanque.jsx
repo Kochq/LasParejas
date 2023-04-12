@@ -4,6 +4,7 @@ import {
   alturaKeyframe,
   presionKeyFrame,
 } from '../animations/animations';
+import { fetchData } from '../api/api';
 import './Tanque.css';
 
 const Tanque = () => {
@@ -44,12 +45,10 @@ const Tanque = () => {
     canillaAnimation.play();
   };
 
-  const mapear = (x, in_min, in_max, out_min, out_max) => {
-    return ((x - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
-  };
+  const mapear = (x, in_min, in_max, out_min, out_max) =>
+    ((x - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 
   const animar = (ref) => {
-    console.log(ref);
     altura = ref.altAgua;
     presion = ref.presion;
     setPresionText(presion);
@@ -66,13 +65,7 @@ const Tanque = () => {
     animarAgua(valor, aguaRef);
   };
 
-  const actualizarDatos = () => {
-    fetch('https://relevar.com.ar/app/LasParejas/backend.php')
-      .then((res) => res.json())
-      .then((datos) => {
-        animar(datos);
-      });
-  };
+  const actualizarDatos = () => fetchData().then(animar);
 
   useEffect(() => {
     actualizarDatos();
