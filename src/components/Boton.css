@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
   padding: 10px 15px;
   color: #fff;
   width: 121px;
-  text-align: center;
   text-decoration: none;
   border-radius: 5px;
   cursor: pointer;

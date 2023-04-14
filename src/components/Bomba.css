@@ -1,0 +1,22 @@
+.bomba {
+  width: 75px;
+}
+
+.bombaEq {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.bombaBtn {
+  border: none;
+  height: 25px;
+  display: flex;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 20px 18px;
+  align-items: center;
+  transition: all 0.5s ease;
+}

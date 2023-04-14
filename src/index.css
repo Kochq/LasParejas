@@ -6,7 +6,22 @@ body {
   background-color: #efefef;
 }
 
-.equipos {
+.tanques {
   display: flex;
   flex-wrap: wrap;
+}
+
+.equipos {
+  display: flex;
+  gap: 10px;
+}
+
+.bombas {
+  min-width: 342px;
+}
+
+@media only screen and (max-width: 576px) {
+  .equipos {
+    display: block;
+  }
 }
