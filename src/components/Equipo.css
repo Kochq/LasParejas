@@ -1,12 +1,13 @@
 .card {
   display: flex;
-  flex-direction: column;
-  transition: all 0.5s ease;
-  border-radius: 10px;
+  max-width: 312px;
   margin: 10px auto;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: #fff;
+  transition: all 0.5s ease;
   padding: 7px 15px 15px 15px;
-  /*background-color: #fff;
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);*/
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
 }
 
 .cardTitle {
@@ -14,7 +15,7 @@
 }
 
 .contenedorsito {
+  gap: 10px;
   display: flex;
   flex-direction: row;
-  gap: 10px;
 }

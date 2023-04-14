@@ -19,6 +19,7 @@
 
 .logo {
   height: 50px;
+  display: flex;
 }
 
 .quit {

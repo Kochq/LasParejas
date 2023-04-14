@@ -19,7 +19,7 @@ const Component = () => {
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 1000);
+    const intervalId = setInterval(actualizarDatos, 90000);
 
     return () => {
       clearInterval(intervalId);
