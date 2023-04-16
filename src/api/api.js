@@ -12,3 +12,5 @@ export const fetchData = (equipo) => {
       return parsedData;
     });
 };
+
+//vercel
