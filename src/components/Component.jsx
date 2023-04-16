@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
 import Data from './Data';
-import { fetchData } from '../api/api';
+import { useContext } from 'react';
 import './Component.css';
+import { apiContext } from '../apiContext';
 
 const svgs = {
   calendarSvg:
@@ -14,17 +14,7 @@ const svgs = {
 };
 
 const Component = () => {
-  const [data, setData] = useState([]);
-  const actualizarDatos = () => fetchData().then(setData);
-
-  useEffect(() => {
-    actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 90000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  const data = useContext(apiContext);
 
   return (
     <div className='datos'>
