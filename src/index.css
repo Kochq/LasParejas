@@ -6,22 +6,23 @@ body {
   background-color: #efefef;
 }
 
-.tanques {
-  display: flex;
-  flex-wrap: wrap;
+@media only screen and (max-width: 750px) {
+  .bombas {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.equipos {
-  display: flex;
-  gap: 10px;
-}
-
-.bombas {
-  min-width: 342px;
-}
-
-@media only screen and (max-width: 576px) {
+@media only screen and (min-width: 750px) {
   .equipos {
-    display: block;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .bombas {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
   }
 }

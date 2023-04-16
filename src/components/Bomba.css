@@ -1,22 +1,42 @@
-.bomba {
+.bomba--img {
   width: 75px;
 }
 
-.bombaEq {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+.bomba--title {
+  margin: 0;
 }
 
-.bombaBtn {
+.bomba {
+  display: flex;
+  min-width: 312px;
+  margin: 10px auto;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #fff;
+  transition: all 0.5s ease;
+  padding: 15px 15px 15px 15px;
+  justify-content: space-between;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+}
+
+.bomba--btn {
+  display: flex;
   border: none;
-  height: 25px;
   display: flex;
   color: #fff;
   cursor: pointer;
   border-radius: 5px;
-  padding: 20px 18px;
+  padding: 10px 15px;
   align-items: center;
   transition: all 0.5s ease;
+}
+
+@media only screen and (min-width: 750px) {
+  .bomba {
+    flex-direction: column;
+    min-width: 0;
+    justify-content: start;
+    gap: 10px;
+  }
 }

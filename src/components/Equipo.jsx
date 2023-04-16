@@ -5,9 +5,9 @@ import './Equipo.css';
 
 const Equipo = ({ name }) => {
   return (
-    <div className='card'>
-      <h2 className='cardTitle'>{name}</h2>
-      <div className='contenedorsito'>
+    <div className='equipo'>
+      <h2 className='equipo--title'>{name}</h2>
+      <div className='equipo--data'>
         <Tanque />
         <Component />
       </div>

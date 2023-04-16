@@ -7,14 +7,14 @@ const App = () => {
     <>
       <NavBar />
       <main className='equipos'>
-        <div className='tanques'>
+        <section className='tanques'>
           <Equipo name='Equipo 1' />
-        </div>
-        <div className='bombas'>
+        </section>
+        <section className='bombas'>
           <Bomba />
           <Bomba />
           <Bomba />
-        </div>
+        </section>
       </main>
     </>
   );
