@@ -14,14 +14,14 @@ const svgs = {
 };
 
 const Component = () => {
-  const data = useContext(apiContext);
+  const {tanque} = useContext(apiContext);
 
   return (
     <div className='datos'>
-      <Data label='Dia' dato={data.dia} svg={svgs.calendarSvg} />
-      <Data label='Hora' dato={data.hora} svg={svgs.relojSvg} />
-      <Data label='Bateria' dato={`${data.bateria}v`} svg={svgs.bateriaSvg} />
-      <Data label='Energia' dato={data.energia} svg={svgs.lamparaSvg} />
+      <Data label='Dia' dato={tanque.dia} svg={svgs.calendarSvg} />
+      <Data label='Hora' dato={tanque.hora} svg={svgs.relojSvg} />
+      <Data label='Bateria' dato={`${tanque.bateria}v`} svg={svgs.bateriaSvg} />
+      <Data label='Energia' dato={tanque.energia} svg={svgs.lamparaSvg} />
     </div>
   );
 };

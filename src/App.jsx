@@ -7,12 +7,24 @@ import { fetchData } from './api/api';
 
 
 const App = () => {
-  const [data, setData] = useState({})
+  const [data, setData] = useState({
+    'bombas' : {
+      'dia': '...',
+      'hora': '...'
+    },
+    'tanque': {
+      'dia': '...',
+      'hora': '...',
+      'bateria': '...',
+      'energia': '...'
+    }
+  })
+
   const actualizarDatos = () => fetchData().then(setData);
 
   useEffect(() => {
     actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 90000);
+    const intervalId = setInterval(actualizarDatos, 3000);
 
     return () => {
       clearInterval(intervalId);
