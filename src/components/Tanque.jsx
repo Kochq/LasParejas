@@ -80,13 +80,14 @@ const Tanque = () => {
     <div>
       <div className='presion'>
         <img className='presion--img' src='./img/canilla.png' height='40px' />
-        <p className='presion--text'>Presion:</p>
+        <p className='presion--text'>Pres:</p>
         <p
           style={presionText > 0.2 ? { color: '#007DBB' } : { color: 'red' }}
           id='presion--text'
         >
           {presionText}
         </p>
+        <p>Bar</p>
       </div>
       <div id='banner'>
         <div className='altura' ref={alturaRef}>

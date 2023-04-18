@@ -12,7 +12,7 @@ export const fetchData = (equipo) => {
         'tanque': {
           ...datos.tanque,
           "bateria": datos.tanque.bateria.toFixed(1),
-          "energia": datos.tanque.bateria >= 12 ? 'OK' : 'Baja',
+          "energia": datos.tanque.bateria > 10.8 ? 'OK' : 'Baja',
         }
       }
       return parsedDatos.tanque

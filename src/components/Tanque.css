@@ -61,6 +61,10 @@
   margin-right: 5px;
 }
 
+.presion--text {
+  font-weight: 800;
+}
+
 @keyframes waveAction {
   0% {
     transform: translate(-150px, 0);
