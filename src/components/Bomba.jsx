@@ -1,25 +1,45 @@
-import { useContext, useState } from 'react';
-import {apiContext} from '../apiContext';
+import { useState } from 'react';
 import './Bomba.css';
 import Boton from './Boton';
 
-const Bomba = ({name}) => {
-  const [gif, setGif] = useState(0);
+const Bomba = ({eq, encendido}) => {
+  const [loading, setLoading] = useState(0);
 
-  const {bombas} = useContext(apiContext)
+  const handleClick = (eq) => {
+    setLoading(1);
+    console.log(eq)
 
-  console.log(bombas)
-
-  const handleClick = () => {
-    if (gif === 0) setGif(1);
-    else setGif(0);
+    fetch('https://relevar.com.ar/app/lasparejas/backend.php', {
+      method: 'POST',
+      body: JSON.stringify({
+        'eq': eq,
+      }),
+      headers: {
+        'Content-Type':'application/json'
+      }
+    })
+      .then(res => {
+        if (res.status === 200) alert('Acción tomada');
+        else if (res.status === 404) throw new Error('Error: 404 Not Found');
+        else if (res.status === 500) throw new Error('Error: 500 Internal Server Error');
+        else if (res.status === 502) {
+          alert('Error: Ya hay un dato enviandose');
+          throw new Error('Error: Ya hay un dato enviandose');
+        }
+        else throw new Error('Error: ' + res.status);
+        setLoading(0);
+      })
+      .catch(error => {
+        console.error(error);
+        setLoading(0);
+      });
   };
 
   return (
     <div className='bomba'>
       <img
         className='bomba--img'
-        src={gif ? './img/bomba.png' : './img/bomba.gif'}
+        src={encendido == 0 ? './img/bomba.png' : './img/bomba.gif'}
         alt='bomba hidraulica'
       />
 
@@ -32,20 +52,19 @@ const Bomba = ({name}) => {
         width={23}
       />
 
-      <button
-        className='bomba--btn'
-        onClick={handleClick}
-        style={gif ? { backgroundColor: 'red' } : { backgroundColor: '#009ae6' }}>
-        <svg
-          className='svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth='3'
-          stroke='currentColor'
-          //stroke={gif ? 'black' : 'white'}
-        >
-          <path d='M5.636 5.636a9 9 0 1012.728 0M12 3v9' />
-        </svg>
+      <button className='bomba--btn' onClick={()=> handleClick(eq)}>
+        {loading 
+          ? <img className='bomba--gif' src="./img/loading.gif" alt=""/>
+          : <svg
+            className='svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth='3'
+            stroke='currentColor'
+          >
+            <path d='M5.636 5.636a9 9 0 1012.728 0M12 3v9' />
+          </svg>
+        }
       </button>
     </div>
   );

@@ -42,9 +42,9 @@ const App = () => {
             <Equipo name='Equipo 1' />
           </section>
           <section className='bombas'>
-            <Bomba />
-            <Bomba />
-            <Bomba />
+            <Bomba eq='eq1' encendido={data.bombas.eq1} />
+            <Bomba eq='eq2' encendido={data.bombas.eq2} />
+            <Bomba eq='eq3' encendido={data.bombas.eq3} />
           </section>
         </main>
       </apiContext.Provider>
