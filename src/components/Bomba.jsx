@@ -1,8 +1,14 @@
 let accion;
 import './Bomba.css';
 import Boton from './Boton';
+import Data from './Data.jsx'
+import { useContext } from 'react';
+import { svgs } from '../svgs/svgs.js';
+import { apiContext } from '../apiContext';
+
 
 const Bomba = ({eq, encendido, equipo}) => {
+  const {bombas} = useContext(apiContext);
   if (encendido == 1) accion = 'Apagar'
   else accion = 'Encender'
 
@@ -17,6 +23,12 @@ const Bomba = ({eq, encendido, equipo}) => {
             src={encendido == 0 ? './img/bomba.png' : './img/bomba.gif'}
             alt='bomba hidraulica'
           />
+        </div>
+
+        <div className="bomba--datos">
+          <Data className='bomba--dato' dato={bombas.dia} svg={svgs.calendarSvg} />
+      <Data className='dato' dato={bombas.hora} svg={svgs.relojSvg} />
+          <Data className='bomba--dato' dato={`${bombas.bateria}v`} svg={svgs.bateriaSvg} />
         </div>
 
         <div className="bomba--botones">

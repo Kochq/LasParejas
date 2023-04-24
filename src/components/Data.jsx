@@ -13,7 +13,7 @@ const Data = ({ label, dato, svg, ifd }) => {
         <path strokeLinecap='round' strokeLinejoin='round' d={svg} />
       </svg>
 
-      <p className='label'>{label}:</p>
+      <p className='label'>{label}</p>
       <p className='data'>{dato}</p>
     </div>
   );

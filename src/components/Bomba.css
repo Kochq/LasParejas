@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+.bomba--datos {
+  display: flex;
+  flex-direction: column;
+}
+
 .bomba--body {
   display: flex;
   width: 95%;

@@ -15,14 +15,7 @@ export const fetchData = (equipo) => {
           "energia": datos.tanque.bateria > 10.8 ? 'OK' : 'Baja',
         }
       }
-      return parsedDatos.tanque
+      console.log(parsedDatos)
+      return parsedDatos
     });
 };
-
-/*
-      parsedData = {
-        ...datos[0],
-        bateria: datos[0].bateria.toFixed(1),
-        energia: datos[0].bateria >= 12 ? 'OK' : 'Baja',
-      };
-      */
