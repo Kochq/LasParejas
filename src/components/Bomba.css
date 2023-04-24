@@ -39,24 +39,6 @@
   gap: 20px;
 }
 
-.bomba--btn {
-  color: #fff;
-  border: none;
-  display: flex;
-  cursor: pointer;
-  min-width: 53px;
-  min-height: 40px;
-  border-radius: 5px;
-  padding: 10px 15px;
-  align-items: center;
-  transition: all 0.5s ease;
-  background-color: #009ae6;
-}
-
-.bomba--btn:hover {
-  background-color: #0056b3;
-}
-
 .bomba--gif {
   width: 20px;
 }

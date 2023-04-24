@@ -22,6 +22,7 @@ const App = () => {
 
   const actualizarDatos = () => fetchData().then(setData);
 
+  console.log(data.bombas.eq3)
   useEffect(() => {
     actualizarDatos();
     const intervalId = setInterval(actualizarDatos, 3000);
