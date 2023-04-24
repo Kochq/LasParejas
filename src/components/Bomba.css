@@ -8,6 +8,7 @@
 
 .bomba--body {
   display: flex;
+  width: 95%;
   min-width: 312px;
   flex-wrap: nowrap;
   align-items: center;
@@ -21,14 +22,21 @@
 .bomba {
   color:#fff;
   display: flex;
+  width: 95%;
   padding-top: 7px;
   margin: 10px auto;
   border-radius: 10px;
+  overflow: hidden;
   align-items: center;
   flex-direction: column;
   background-color: #009ae6;
   transition: all 0.5s ease;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+}
+
+.bomba--botones {
+  display: flex;
+  gap: 20px;
 }
 
 .bomba--btn {

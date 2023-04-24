@@ -39,12 +39,12 @@ const App = () => {
       <apiContext.Provider value={data} >
         <main className='equipos'>
           <section className='tanques'>
-            <Equipo name='Equipo 1' />
+            <Equipo />
           </section>
           <section className='bombas'>
-            <Bomba eq='eq1' encendido={data.bombas.eq1} />
-            <Bomba eq='eq2' encendido={data.bombas.eq2} />
-            <Bomba eq='eq3' encendido={data.bombas.eq3} />
+            <Bomba eq='eq1' equipo='Bomba 1' encendido={data.bombas.eq1} />
+            <Bomba eq='eq2' equipo='Bomba 2' encendido={data.bombas.eq2} />
+            <Bomba eq='eq3' equipo='Bomba 3' encendido={data.bombas.eq3} />
           </section>
         </main>
       </apiContext.Provider>

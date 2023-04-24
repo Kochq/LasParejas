@@ -82,7 +82,7 @@ const Tanque = () => {
   }, []);
 
   return (
-    <div>
+    <div className='tanque' >
       <div className='presion'>
         <img className='presion--img' src='./img/canilla.png' height='40px' />
         <p className='presion--text'>Presion:</p>
