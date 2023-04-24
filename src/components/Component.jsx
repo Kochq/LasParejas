@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
 import Data from './Data';
-import { fetchData } from '../api/api';
+import { useContext } from 'react';
 import './Component.css';
+import { apiContext } from '../apiContext';
 
 const svgs = {
   calendarSvg:
@@ -14,24 +14,14 @@ const svgs = {
 };
 
 const Component = () => {
-  const [data, setData] = useState([]);
-  const actualizarDatos = () => fetchData().then(setData);
-
-  useEffect(() => {
-    actualizarDatos();
-    const intervalId = setInterval(actualizarDatos, 90000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  const {tanque} = useContext(apiContext);
 
   return (
     <div className='datos'>
-      <Data label='Dia' dato={data.dia} svg={svgs.calendarSvg} />
-      <Data label='Hora' dato={data.hora} svg={svgs.relojSvg} />
-      <Data label='Bateria' dato={`${data.bateria}v`} svg={svgs.bateriaSvg} />
-      <Data label='Energia' dato={data.energia} svg={svgs.lamparaSvg} />
+      <Data className='dato' label='Dia' dato={tanque.dia} svg={svgs.calendarSvg} />
+      <Data className='dato' label='Hora' dato={tanque.hora} svg={svgs.relojSvg} />
+      <Data className='dato' label='Bateria' dato={`${tanque.bateria}v`} svg={svgs.bateriaSvg} />
+      <Data className='dato' label='Energia' dato={tanque.energia} svg={svgs.lamparaSvg} />
     </div>
   );
 };

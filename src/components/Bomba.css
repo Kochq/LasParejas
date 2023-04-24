@@ -1,0 +1,53 @@
+.bomba--img {
+  width: 75px;
+}
+
+.bomba--title {
+  margin: 0;
+}
+
+.bomba--body {
+  display: flex;
+  width: 95%;
+  min-width: 312px;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 15px 10px 15px;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.bomba {
+  color:#fff;
+  display: flex;
+  width: 95%;
+  padding-top: 7px;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  background-color: #009ae6;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+}
+
+.bomba--botones {
+  display: flex;
+  gap: 20px;
+}
+
+.bomba--gif {
+  width: 20px;
+}
+
+@media only screen and (min-width: 750px) {
+  .bomba--body {
+    flex-direction: column;
+    min-width: 0;
+    justify-content: start;
+    gap: 10px;
+  }
+}

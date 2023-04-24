@@ -3,11 +3,10 @@ import Component from './Component';
 import Botones from './Botones';
 import './Equipo.css';
 
-const Equipo = ({ name }) => {
+const Equipo = () => {
   return (
-    <div className='card'>
-      <h2 className='cardTitle'>{name}</h2>
-      <div className='contenedorsito'>
+    <div className='equipo'>
+      <div className='equipo--data'>
         <Tanque />
         <Component />
       </div>

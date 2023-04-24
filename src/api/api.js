@@ -18,3 +18,11 @@ export const fetchData = (equipo) => {
       return parsedDatos.tanque
     });
 };
+
+/*
+      parsedData = {
+        ...datos[0],
+        bateria: datos[0].bateria.toFixed(1),
+        energia: datos[0].bateria >= 12 ? 'OK' : 'Baja',
+      };
+      */

@@ -6,7 +6,23 @@ body {
   background-color: #efefef;
 }
 
-.equipos {
-  display: flex;
-  flex-wrap: wrap;
+@media only screen and (max-width: 750px) {
+  .bombas {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .equipos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .bombas {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
 }
