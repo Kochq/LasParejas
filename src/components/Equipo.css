@@ -1,6 +1,7 @@
 .equipo {
   width: 88%;
   display: flex;
+  min-width: 315px;
   margin: 10px auto;
   border-radius: 10px;
   flex-direction: column;

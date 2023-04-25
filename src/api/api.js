@@ -8,11 +8,13 @@ export const fetchData = (equipo) => {
         ...datos,
         'bombas': {
           ...datos.bombas,
+          "bateria": datos.bombas.bateria.toFixed(1),
+          "energia": datos.bombas.bateria > 10 ? 'Estable' : 'Baja',
         },
         'tanque': {
           ...datos.tanque,
           "bateria": datos.tanque.bateria.toFixed(1),
-          "energia": datos.tanque.bateria > 10.8 ? 'OK' : 'Baja',
+          "energia": datos.tanque.bateria > 10.8 ? 'Estable' : 'Baja',
         }
       }
       console.log(parsedDatos)

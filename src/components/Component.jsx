@@ -12,7 +12,7 @@ const Component = () => {
       <Data className='dato' label='Dia:' dato={tanque.dia} svg={svgs.calendarSvg} />
       <Data className='dato' label='Hora:' dato={tanque.hora} svg={svgs.relojSvg} />
       <Data className='dato' label='Bateria:' dato={`${tanque.bateria}v`} svg={svgs.bateriaSvg} />
-      <Data className='dato' label='Energia:' dato={tanque.energia} svg={svgs.lamparaSvg} />
+      <Data className='dato' label='Energia:' dato={tanque.energia} svg={svgs.rayoSvg} />
     </div>
   );
 };

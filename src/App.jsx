@@ -43,7 +43,7 @@ const App = () => {
             <Equipo />
           </section>
           <section className='bombas'>
-            <Bomba eq='eq1' equipo='Bomba 1' encendido={data.bombas.eq1}  dia={data.bombas.dia}/>
+            <Bomba eq='eq1' equipo='Bomba 1' encendido={data.bombas.eq1} />
             <Bomba eq='eq2' equipo='Bomba 2' encendido={data.bombas.eq2} />
             <Bomba eq='eq3' equipo='Bomba 3' encendido={data.bombas.eq3} />
           </section>

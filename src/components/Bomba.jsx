@@ -9,6 +9,7 @@ import { apiContext } from '../apiContext';
 
 const Bomba = ({eq, encendido, equipo}) => {
   const {bombas} = useContext(apiContext);
+
   if (encendido == 1) accion = 'Apagar'
   else accion = 'Encender'
 
@@ -26,14 +27,14 @@ const Bomba = ({eq, encendido, equipo}) => {
         </div>
 
         <div className="bomba--datos">
-          <Data className='bomba--dato' dato={bombas.dia} svg={svgs.calendarSvg} />
-      <Data className='dato' dato={bombas.hora} svg={svgs.relojSvg} />
-          <Data className='bomba--dato' dato={`${bombas.bateria}v`} svg={svgs.bateriaSvg} />
+          <Data dato={bombas.dia} svg={svgs.calendarSvg} />
+          <Data dato={bombas.hora} svg={svgs.relojSvg} />
+          <Data dato={bombas.energia} svg={svgs.rayoSvg} />
         </div>
 
         <div className="bomba--botones">
           <Boton
-            href='https://relevar.com.ar/app/geopos.php?centro=-34.5557,-60.9212&punta=-34.5557,-60.9212&nombre=BOMBAS&archivo_movil=Movil002.txt&carpeta=LASPAREJAS'
+            href={bombas.location}
             svg='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z'
             svg2='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z'
             BcColor='#009ae6'

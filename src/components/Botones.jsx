@@ -1,12 +1,17 @@
-import Boton from './Boton';
 import './Botones.css';
+import Boton from './Boton';
+import { useContext } from 'react';
+import { apiContext } from '../apiContext';
+
 
 const Buttons = () => {
+  const {tanque} = useContext(apiContext);
+
   return (
     <div className='botones'>
       <Boton
         value='Ubicacion'
-        href='https://relevar.com.ar/app/geopos.php?centro=-32.6686,-61.51465&punta=-32.6686,-61.51465&nombre=Cisterna de Agua&archivo_movil=Movil001.txt&carpeta=LASPAREJAS'
+        href={tanque.location}
         svg='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z'
         svg2='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z'
         BcColor='#009ae6'

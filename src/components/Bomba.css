@@ -8,6 +8,7 @@
 
 .bomba--datos {
   display: flex;
+  align-content: center;
   flex-direction: column;
 }
 
@@ -48,7 +49,7 @@
   width: 20px;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 850px) {
   .bomba--body {
     flex-direction: column;
     min-width: 0;

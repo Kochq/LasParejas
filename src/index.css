@@ -13,7 +13,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 850px) {
   .equipos {
     display: flex;
     gap: 20px;
@@ -24,5 +24,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    height: 350px;
+  }
+  .bomba--body {
+    display: flex;
+    justify-content: space-between;
+    height: 350px;
+  }
+  .bomba {
+    height: 343px;
   }
 }
