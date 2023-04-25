@@ -10,7 +10,8 @@ const App = () => {
   const [data, setData] = useState({
     'bombas' : {
       'dia': '...',
-      'hora': '...'
+      'hora': '...',
+      'energia': '...'
     },
     'tanque': {
       'dia': '...',
