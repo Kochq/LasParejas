@@ -7,7 +7,7 @@ import { svgs } from '../svgs/svgs.js';
 import { apiContext } from '../apiContext';
 
 
-const Bomba = ({eq, encendido, equipo}) => {
+const Bomba = ({eq, encendido, nombreEq}) => {
   const {bombas} = useContext(apiContext);
 
   if (encendido == 1) accion = 'Apagar'
@@ -15,7 +15,7 @@ const Bomba = ({eq, encendido, equipo}) => {
 
   return (
     <div className='bomba' >
-      <h3 className='bomba--title'>{equipo}</h3>
+      <h3 className='bomba--title'>{nombreEq}</h3>
       <div className='bomba--body'>
 
         <div className="bomba--bomba">
@@ -43,7 +43,7 @@ const Bomba = ({eq, encendido, equipo}) => {
           />
 
           <Boton 
-            href={`https://relevar.com.ar/app/lasparejas/controlLasParejas.php?nombre=${equipo}&accion=${accion}&eq=${eq}`}
+            href={`https://relevar.com.ar/app/lasparejas/controlLasParejas.php?nombre=${nombreEq}&accion=${accion}&eq=${eq}`}
             BcColor='#009ae6'
             NewBcColor='#0056b3'
             width={23}

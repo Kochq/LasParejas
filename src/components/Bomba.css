@@ -13,13 +13,14 @@
 }
 
 .bomba--body {
+  width: 100%;
   display: flex;
-  width: 95%;
   min-width: 312px;
   flex-wrap: nowrap;
   align-items: center;
   background-color: #fff;
-  padding: 10px 15px 10px 15px;
+  box-sizing: border-box;
+  padding: 10px 15px 12px 15px;
   justify-content: space-between;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -27,12 +28,11 @@
 
 .bomba {
   color:#fff;
-  display: flex;
   width: 95%;
+  display: flex;
   padding-top: 7px;
   margin: 10px auto;
   border-radius: 10px;
-  overflow: hidden;
   align-items: center;
   flex-direction: column;
   background-color: #009ae6;
@@ -55,5 +55,8 @@
     min-width: 0;
     justify-content: start;
     gap: 10px;
+  }
+  .bomba--img {
+    width: 125px;
   }
 }

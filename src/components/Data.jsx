@@ -1,6 +1,6 @@
 import './Data.css';
 
-const Data = ({ label, dato, svg, ifd }) => {
+const Data = ({ label, dato, svg}) => {
   return (
     <div className='text'>
       <svg

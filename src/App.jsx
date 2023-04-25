@@ -23,7 +23,6 @@ const App = () => {
 
   const actualizarDatos = () => fetchData().then(setData);
 
-  console.log(data.bombas.eq3)
   useEffect(() => {
     actualizarDatos();
     const intervalId = setInterval(actualizarDatos, 3000);
@@ -44,9 +43,9 @@ const App = () => {
             <Equipo />
           </section>
           <section className='bombas'>
-            <Bomba eq='eq1' equipo='Bomba 1' encendido={data.bombas.eq1} />
-            <Bomba eq='eq2' equipo='Bomba 2' encendido={data.bombas.eq2} />
-            <Bomba eq='eq3' equipo='Bomba 3' encendido={data.bombas.eq3} />
+            <Bomba eq='eq1' nombreEq='Bomba 1' encendido={data.bombas.eq1} />
+            <Bomba eq='eq2' nombreEq='Bomba 2' encendido={data.bombas.eq2} />
+            <Bomba eq='eq3' nombreEq='Bomba 3' encendido={data.bombas.eq3} />
           </section>
         </main>
       </apiContext.Provider>

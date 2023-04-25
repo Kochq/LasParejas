@@ -1,4 +1,3 @@
-import Boton from './Boton';
 import './NavBar.css';
 
 const NavBar = () => {
