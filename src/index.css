@@ -6,7 +6,7 @@ body {
   background-color: #efefef;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
   .bombas {
     display: flex;
     flex-direction: column;

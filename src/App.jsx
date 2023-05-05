@@ -1,14 +1,17 @@
+import { fetchData } from './api/api';
 import Bomba from './components/Bomba';
 import Equipo from './components/Equipo';
 import NavBar from './components/NavBar';
 import { apiContext } from './apiContext';
 import {useState, useEffect} from 'react';
-import { fetchData } from './api/api';
 
 
 const App = () => {
   const [data, setData] = useState({
     'bombas' : {
+      'eq1': 0,
+      'eq2': 0,
+      'eq3': 0,
       'dia': '...',
       'hora': '...',
       'energia': '...'

@@ -45,16 +45,10 @@
   gap: 20px;
 }
 
-.bomba--gif {
-  width: 20px;
-}
-
 @media only screen and (min-width: 850px) {
   .bomba--body {
     flex-direction: column;
     min-width: 0;
-    justify-content: start;
-    gap: 10px;
   }
   .bomba--img {
     width: 125px;
