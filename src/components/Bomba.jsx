@@ -43,7 +43,7 @@ const Bomba = ({eq, encendido, nombreEq}) => {
           />
 
           <Boton 
-            href={`https://relevar.com.ar/app/lasparejas/controlLasParejas.php?nombre=${nombreEq}&accion=${accion}&eq=${eq}`}
+            href={`http://relevar.com.ar:8080/app/lasparejas/controlLasParejas.php?nombre=${nombreEq}&accion=${accion}&eq=${eq}`}
             BcColor='#009ae6'
             NewBcColor='#0056b3'
             width={23}
