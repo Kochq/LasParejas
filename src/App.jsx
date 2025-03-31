@@ -2,13 +2,14 @@ import { fetchData } from './api/api';
 import Bomba from './components/Bomba';
 import Equipo from './components/Equipo';
 import NavBar from './components/NavBar';
+import FooterButtons from './components/FooterButtons';
 import { apiContext } from './apiContext';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 
 const App = () => {
   const [data, setData] = useState({
-    'bombas' : {
+    'bombas': {
       'eq1': 0,
       'eq2': 0,
       'eq3': 0,
@@ -53,6 +54,7 @@ const App = () => {
         </main>
       </apiContext.Provider>
 
+      <FooterButtons />
     </>
   );
 };

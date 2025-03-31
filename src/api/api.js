@@ -1,7 +1,7 @@
 let parsedDatos;
 
 export const fetchData = (equipo) => {
-  return fetch(`http://relevar.com.ar:8080/app/LasParejas/backend.php?${equipo}`)
+  return fetch(`http://relevar.com.ar/app/LasParejas/backend.php?${equipo}`)
     .then((res) => res.json())
     .then((datos) => {
       parsedDatos = {
