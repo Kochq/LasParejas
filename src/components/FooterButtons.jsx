@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FooterButtons.css';
 
 // Importa los iconos que necesites o usa SVG directamente
@@ -16,38 +16,42 @@ const SettingsIcon = () => (
   </svg>
 );
 
-const FooterButtons = () => {
-  const [activeTab, setActiveTab] = useState('inicio');
+// Ahora el componente recibe activeTab y onTabChange como props
+const FooterButtons = ({ activeTab, onTabChange }) => {
+  // Manejador para cambiar el tab y notificar al componente padre
+  const handleTabChange = (tabId) => {
+    if (onTabChange) {
+      onTabChange(tabId);
+    }
+  };
 
   return (
-    <>
-      {/* Contenido principal de tu aplicación */}
-      <div className="main-content">
-        {/* Aquí va todo el contenido de tu aplicación */}
-      </div>
+    <div className="bottom-nav">
+      <div className="nav-buttons">
+        <button
+          className={`nav-button ${activeTab === 'cisternas' ? 'active' : ''}`}
+          onClick={() => handleTabChange('cisternas')}
+        >
+          <HomeIcon />
+          <span className="nav-button-label">Cisternas</span>
+        </button>
 
-      {/* Barra de navegación fija en la parte inferior */}
-      <div className="bottom-nav">
-        <div className="nav-buttons">
-          <button
-            className={`nav-button ${activeTab === 'inicio' ? 'active' : ''}`}
-            onClick={() => setActiveTab('inicio')}
-          >
-            <HomeIcon />
-            <span className="nav-button-label">Inicio</span>
-          </button>
-
-          <button
-            className={`nav-button ${activeTab === 'ajustes' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ajustes')}
-          >
-            <SettingsIcon />
-            <span className="nav-button-label">Ajustes</span>
-          </button>
-        </div>
+        <button
+          className={`nav-button ${activeTab === 'osmosis' ? 'active' : ''}`}
+          onClick={() => handleTabChange('osmosis')}
+        >
+          <SettingsIcon />
+          <span className="nav-button-label">Osmosis</span>
+        </button>
       </div>
-    </>
+    </div>
   );
+};
+
+// Propiedades por defecto para el componente
+FooterButtons.defaultProps = {
+  activeTab: 'cisternas',
+  onTabChange: () => { }
 };
 
 export default FooterButtons;

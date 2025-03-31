@@ -1,7 +1,7 @@
 let parsedDatos;
 
-export const fetchData = (equipo) => {
-  return fetch(`http://relevar.com.ar/app/LasParejas/backend.php?${equipo}`)
+export const fetchData = (tab) => {
+  return fetch('http://relevar.com.ar/app/LasParejas/backend.php')
     .then((res) => res.json())
     .then((datos) => {
       parsedDatos = {
@@ -15,7 +15,18 @@ export const fetchData = (equipo) => {
           ...datos.tanque,
           "bateria": datos.tanque.bateria.toFixed(1),
           "energia": datos.tanque.bateria > 10.8 ? 'Estable' : 'Baja',
-        }
+        },
+        'bombasOsmosis': {
+          ...datos.bombasOsmosis,
+          "bateria": datos.bombasOsmosis.bateria.toFixed(1),
+          "energia": datos.bombasOsmosis.bateria > 10 ? 'Estable' : 'Baja',
+        },
+        'tanqueOsmosis': {
+          ...datos.tanqueOsmosis,
+          "bateria": datos.tanqueOsmosis.bateria.toFixed(1),
+          "energia": datos.tanqueOsmosis.bateria > 10.8 ? 'Estable' : 'Baja',
+        },
+        'tab': tab
       }
       console.log(parsedDatos)
       return parsedDatos

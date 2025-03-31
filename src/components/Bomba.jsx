@@ -1,23 +1,23 @@
-let accion;
 import './Bomba.css';
 import Boton from './Boton';
-import Data from './Data.jsx'
-import { useContext } from 'react';
+import Data from './Data.jsx';
 import { svgs } from '../svgs/svgs.js';
-import { apiContext } from '../apiContext';
+import useStore from '../context/store';
 
+const Bomba = ({ eq, nombreEq, encendido }) => {
+  const currentTab = useStore(state => state.currentTab);
+  const bombasCisternas = useStore(state => state.bombas);
+  const bombasOsmosis = useStore(state => state.bombasOsmosis);
 
-const Bomba = ({eq, encendido, nombreEq}) => {
-  const {bombas} = useContext(apiContext);
+  const bombas = currentTab === 'cisternas' ? bombasCisternas : bombasOsmosis;
 
-  if (encendido == 1) accion = 'Apagar'
-  else accion = 'Encender'
+  console.log(encendido)
+  const accion = encendido == 1 ? 'Apagar' : 'Encender';
 
   return (
-    <div className='bomba' >
+    <div className='bomba'>
       <h3 className='bomba--title'>{nombreEq}</h3>
       <div className='bomba--body'>
-
         <div className="bomba--bomba">
           <img
             className='bomba--img'
@@ -25,13 +25,11 @@ const Bomba = ({eq, encendido, nombreEq}) => {
             alt='bomba hidraulica'
           />
         </div>
-
         <div className="bomba--datos">
           <Data dato={bombas.dia} svg={svgs.calendarSvg} />
           <Data dato={bombas.hora} svg={svgs.relojSvg} />
           <Data dato={bombas.energia} svg={svgs.rayoSvg} />
         </div>
-
         <div className="bomba--botones">
           <Boton
             href={bombas.location}
@@ -41,8 +39,7 @@ const Bomba = ({eq, encendido, nombreEq}) => {
             NewBcColor='#0056b3'
             width={23}
           />
-
-          <Boton 
+          <Boton
             href={`http://relevar.com.ar:8080/app/lasparejas/controlLasParejas.php?nombre=${nombreEq}&accion=${accion}&eq=${eq}`}
             BcColor='#009ae6'
             NewBcColor='#0056b3'
@@ -50,7 +47,6 @@ const Bomba = ({eq, encendido, nombreEq}) => {
             svg='M5.636 5.636a9 9 0 1012.728 0M12 3v9'
           />
         </div>
-
       </div>
     </div>
   );

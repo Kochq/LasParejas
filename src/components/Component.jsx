@@ -1,11 +1,14 @@
 import Data from './Data';
-import { useContext } from 'react';
 import './Component.css';
-import { apiContext } from '../apiContext';
 import { svgs } from '../svgs/svgs';
+import useStore from '../context/store';
 
 const Component = () => {
-  const {tanque} = useContext(apiContext);
+  const currentTab = useStore(state => state.currentTab);
+  const tanqueCisternas = useStore(state => state.tanque);
+  const tanqueOsmosis = useStore(state => state.tanqueOsmosis);
+
+  const tanque = currentTab === 'cisternas' ? tanqueCisternas : tanqueOsmosis;
 
   return (
     <div className='datos'>

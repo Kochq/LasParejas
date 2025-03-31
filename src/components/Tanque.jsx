@@ -6,6 +6,7 @@ import {
 } from '../animations/animations';
 import { fetchData } from '../api/api';
 import './Tanque.css';
+import useStore from '../context/store';
 
 const aguaSvg = 'M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z'
 
@@ -20,6 +21,7 @@ const Tanque = () => {
   let presion = 0;
   let altura = 0;
   let valor = 0;
+  const currentTab = useStore(state => state.currentTab);
 
   const animarAgua = (finPos, elemento) => {
     const aguaAnimation = new Animation(
@@ -55,8 +57,14 @@ const Tanque = () => {
     presion = ref.presion;
     setPresionText(presion);
     setAlturaText(altura);
+    let maxAltura = 4;
+    if (currentTab == "cisternas") {
+      maxAltura = 4;
+    } else {
+      maxAltura = 8;
+    }
 
-    valor = mapear(altura, 0, 3, 100, 0);
+    valor = mapear(altura, 0, maxAltura, 100, 0);
 
     if (presion >= 0.2) animarCanilla(0, canillaRef);
     else animarCanilla(-100, canillaRef);
@@ -69,7 +77,11 @@ const Tanque = () => {
 
   const actualizarDatos = () => fetchData()
     .then((datos) => {
-      animar(datos.tanque)
+      if (currentTab == "cisternas") {
+        animar(datos.tanque)
+      } else {
+        animar(datos.tanqueOsmosis)
+      }
     });
 
   useEffect(() => {
@@ -79,7 +91,7 @@ const Tanque = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [currentTab]);
 
   return (
     <div className='tanque' >

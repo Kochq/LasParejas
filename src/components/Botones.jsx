@@ -1,11 +1,15 @@
 import './Botones.css';
 import Boton from './Boton';
-import { useContext } from 'react';
-import { apiContext } from '../apiContext';
+import useStore from '../context/store';
 
+const Botones = () => {
+  // Obtener el tab actual y los datos del tanque correspondiente
+  const currentTab = useStore(state => state.currentTab);
+  const tanqueCisternas = useStore(state => state.tanque);
+  const tanqueOsmosis = useStore(state => state.tanqueOsmosis);
 
-const Buttons = () => {
-  const {tanque} = useContext(apiContext);
+  // Determinar qué tanque usar según el tab actual
+  const tanque = currentTab === 'cisternas' ? tanqueCisternas : tanqueOsmosis;
 
   return (
     <div className='botones'>
@@ -28,4 +32,4 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default Botones;

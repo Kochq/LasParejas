@@ -7,7 +7,7 @@ const NavBar = () => {
         <a href='http://relevar.com.ar:8080/app/cerrar-sesion'>
           <img
             className='logo'
-            src='http://relevar.com.ar:8080/app/imagenes-iconos/LOGO_RELEVAR.png'
+            src='http://relevar.com.ar/app/imagenes-iconos/LOGO_RELEVAR.png'
             alt='logo'
           />
         </a>
