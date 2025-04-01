@@ -1,9 +1,10 @@
 let parsedDatos;
 
 export const fetchData = (tab) => {
-  return fetch('http://relevar.com.ar/app/LasParejas/backend.php')
+  return fetch('https://relevar.com.ar/app/LasParejas/backend.php')
     .then((res) => res.json())
     .then((datos) => {
+      console.log(datos)
       parsedDatos = {
         ...datos,
         'bombas': {

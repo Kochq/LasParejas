@@ -49,8 +49,8 @@ const App = () => {
               <Equipo />
             </section>
             <section className='bombas'>
-              <Bomba eq='eq1' nombreEq='Bomba 1' encendido={bombasOsmosis.eq1} />
-              <Bomba eq='eq2' nombreEq='Bomba 2' encendido={bombasOsmosis.eq2} />
+              <Bomba eq='eq4' nombreEq='Bomba 1' encendido={bombasOsmosis.eq1} />
+              <Bomba eq='eq5' nombreEq='Bomba 2' encendido={bombasOsmosis.eq2} />
             </section>
           </>
         );
